@@ -15,10 +15,10 @@ module Jekyll
         @text
       else
         translation_data ||= begin
-          if context['site']['data_file'].nil?
+          if context['site']['translations_source'].nil?
             context['site']['translations']
           else
-            context['site']['data'][context['site']['data_file']]
+            context['site']['data'][context['site']['translations_source']]
           end
         end
         translations = translation_data[lang]
