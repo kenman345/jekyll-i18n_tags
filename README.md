@@ -43,7 +43,7 @@ translations_source: [name of file without extension]
 
 And in your `_data` folder, put move the contents of the `translations:` configuration into the root of the file. 
 
-As an example, if your `_config.yml` file has the configuration `translations_source: languages`, then your `_data/languages.yml` file should like like the following:
+As an example, if your `_config.yml` file has the configuration `translations_source: languages`, then your `_data/languages.yml` file should look like the following:
 ```yaml
 pl:
   Hello, world!: Witaj, świecie!
