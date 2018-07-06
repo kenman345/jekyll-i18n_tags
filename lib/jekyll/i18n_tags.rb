@@ -10,12 +10,18 @@ module Jekyll
     def render(context)
       lang = context['page']['lang']
       raise "Page language not specified: #{context['page']['path']}" unless lang
-      site = context['site']
-      source_lang = context['site']['source_lang']
+      source_lang ||= context['site']['source_lang']
       if lang == source_lang
         @text
       else
-        translations = site['translations'][lang]
+        translation_data ||= begin
+          if context['site']['data_file'].nil?
+            context['site']['translations']
+          else
+            context['site']['data'][context['site']['data_file']]
+          end
+        end
+        translations = translation_data[lang]
         raise 'Translations not provided' unless translations
         translation = translations[@text]
         raise "Translation not provided: #{@text}" unless translation
