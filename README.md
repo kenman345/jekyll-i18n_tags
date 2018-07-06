@@ -33,6 +33,22 @@ In your templates, use the `t` tag:
 
 For each page which uses the translation tag, you need to set `lang` variable (you may want to use [front matter defaults](http://jekyllrb.com/docs/configuration/#front-matter-defaults) to faciliate this).
 
+## Advanced Usage
+
+If you wish to separate out the translations from the `_config.yml` file and instead use a file in your `_data` folder, you can do this by adding the following to your `_config.yml` file.
+
+```yaml
+translations_source: [name of file without extension]
+```
+
+And in your `_data` folder, put move the contents of the `translations:` configuration into the root of the file. 
+
+As an example, if your `_config.yml` file has the configuration `translations_source: languages`, then your `_data/languages.yml` file should like like the following:
+```yaml
+pl:
+  Hello, world!: Witaj, świecie!
+```
+
 ## Versioning
 
 This project uses [semantic versioning](http://semver.org/).
