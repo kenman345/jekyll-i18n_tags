@@ -12,6 +12,14 @@ group :jekyll_plugins do
 end
 ```
 
+And add the following to your site's `_config.yml` file:
+
+```yaml
+plugins:
+  - jekyll-i18n_tags
+```
+Note: If you are using a Jekyll version less than 3.5.0, use the `gems` key instead of `plugins`.
+
 ## Usage
 
 Put the configuration and translations in your `_config.yml`:
